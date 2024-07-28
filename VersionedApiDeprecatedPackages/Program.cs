@@ -1,23 +1,19 @@
-using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning(opts =>
-    {
-        opts.DefaultApiVersion = new ApiVersion(1, 0);
-        opts.AssumeDefaultVersionWhenUnspecified = true;
-        opts.ReportApiVersions = true;
-    });
-    //.AddApiExplorer(options =>
-    //{
-    //    options.GroupNameFormat = "'v'VVV";
-    //    options.SubstituteApiVersionInUrl = true;
-    //});
+{
+    opts.DefaultApiVersion = new ApiVersion(1, 0);
+    opts.AssumeDefaultVersionWhenUnspecified = true;
+    opts.ReportApiVersions = true;
+});
 
 var app = builder.Build();
 

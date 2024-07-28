@@ -1,13 +1,11 @@
-﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace VersionedApi.Controllers;
+namespace VersionedApiDeprecatedPackages.Controllers.v2;
 
-[Route("api/v{version:apiVersion}/[controller]")]
+[Route("api/v{version:ApiVersion}/[controller]")]
 [ApiController]
-[ApiVersion("1.0")]
 [ApiVersion("2.0")]
 public class UsersController : ControllerBase
 {
@@ -16,7 +14,7 @@ public class UsersController : ControllerBase
     [HttpGet]
     public IEnumerable<string> Get()
     {
-        return new string[] { "value1", "value2" };
+        return new string[] { "Version 2 value1", "Version 2 value2" };
     }
 
     // GET api/<UsersController>/5
