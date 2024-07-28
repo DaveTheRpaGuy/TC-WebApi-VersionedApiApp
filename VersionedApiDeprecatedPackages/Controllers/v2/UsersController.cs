@@ -9,7 +9,6 @@ namespace VersionedApiDeprecatedPackages.Controllers.v2;
 [ApiVersion("2.0")]
 public class UsersController : ControllerBase
 {
-    // GET: api/v1/Users
     // GET: api/v2/Users
     [HttpGet]
     public IEnumerable<string> Get()
